@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <v-carousel hide-delimiters :height="screenHeight">
-      <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
-        <div class="carousel-overlay">
-          <div class="carousel-overlay-title">{{ item.title }}</div>
-          <div class="carousel-overlay-description">{{ item.title }}</div>
+  <v-carousel hide-delimiters :height="screenHeight">
+    <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
+      <div class="carousel-overlay">
+        <div class="carousel-overlay-title">{{ item.title }}</div>
+        <div class="carousel-overlay-description">
+          {{ item.desicription }}
         </div>
-      </v-carousel-item>
-    </v-carousel>
-  </div>
+      </div>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 
 <script>
@@ -22,25 +22,27 @@ export default {
       items: [
         {
           src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Web App Development',
-          desicription: 'hogehogehoge',
+          title: 'About',
+          desicription: `WEBサービスをフリーランスチームが成功させる`,
         },
         {
           src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Web Site Design / Development',
-          desicription: 'hogehogehoge',
+          title: 'Works / Portfolio',
+          desicription: 'これまでの制作実績',
         },
         {
           src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Web Marketing',
-          desicription: 'hogehogehoge',
+          title: 'Company',
+          desicription: '私たちの組織について',
         },
         {
           src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Web Consulting',
-          desicription: 'hogehogehoge',
+          title: 'Contact',
+          desicription: 'お問い合わせはこちらから',
         },
       ],
+      scrollY: 0,
+      docHeight: 0,
     }
   },
   computed: {
@@ -56,13 +58,17 @@ export default {
   z-index: 50;
   position: absolute;
   width: 100%;
-  top: 80%;
+  top: 75%;
   padding-left: 5%;
   font-size: 2.4rem;
 
   &-description {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: gray;
   }
+}
+
+.fixed {
+  position: fixed;
 }
 </style>

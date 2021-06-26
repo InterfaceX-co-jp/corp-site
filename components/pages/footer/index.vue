@@ -1,6 +1,7 @@
 <template>
   <div class="footer">
     <div class="logo">InterfaceX</div>
+    <div class="profile">The Freelance WEB Team</div>
     <div class="company">〒530-0027 大阪市北区堂山町1-5 三共梅田ビル7階</div>
   </div>
 </template>
@@ -19,7 +20,11 @@ export default Vue.extend({})
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 5vh 5vw;
+  padding: 5vh 5vw 2vh;
+}
+
+.profile {
+  color: black;
 }
 
 .logo {
@@ -30,6 +35,7 @@ export default Vue.extend({})
 
 .company {
   color: black;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 767px) {

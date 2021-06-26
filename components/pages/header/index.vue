@@ -1,14 +1,17 @@
 <template>
   <div class="header">
-    <div class="title">Interface-X</div>
-    <div class="menu">三</div>
+    <div class="title">InterfaceX</div>
+    <HumburgerMenu />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import HumburgerMenu from '@/components/base/HumburgerMenu/HumburgerMenu.vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: { HumburgerMenu },
+})
 </script>
 
 <style lang="scss" scoped>

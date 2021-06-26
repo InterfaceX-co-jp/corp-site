@@ -22,7 +22,7 @@ declare module '@nuxt/types' {
   }
 }
 
-const $window = Vue.observable({
+const $window = Vue.observable<window>({
   width: 0,
   height: 0,
   pageYOffset: 0,
@@ -32,11 +32,11 @@ const $window = Vue.observable({
 // Nuxt を使用しなければこの分岐は削除してください
 if (process.browser) {
   const onScroll = () => {
-    $window.pageYOffset = global.pageYOffset
+    $window.pageYOffset = window.pageYOffset
   }
   const onResize = () => {
     $window.width = document.documentElement.clientWidth
-    $window.height = global.innerHeight
+    $window.height = window.innerHeight
   }
   global.addEventListener('scroll', onScroll)
   global.addEventListener('resize', onResize)
