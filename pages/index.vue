@@ -1,22 +1,34 @@
 <template>
-  <v-carousel hide-delimiters :height="screenHeight">
-    <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
-      <div class="carousel-overlay">
-        <div class="carousel-overlay-title">{{ item.title }}</div>
-        <div class="carousel-overlay-description">
-          {{ item.desicription }}
+  <div>
+    <v-carousel hide-delimiters :height="screenHeight">
+      <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
+        <div class="carousel-overlay">
+          <div class="carousel-overlay-title">{{ item.title }}</div>
+          <div class="carousel-overlay-description">
+            {{ item.desicription }}
+          </div>
         </div>
-      </div>
-    </v-carousel-item>
-  </v-carousel>
+      </v-carousel-item>
+    </v-carousel>
+    <AboutUs />
+    <Portfolio />
+    <Company />
+  </div>
 </template>
 
 <script>
+import AboutUs from '~/components/pages/top/AboutUs.vue'
+import Portfolio from '~/components/pages/top/Portfolio.vue'
+import Company from '~/components/pages/top/Company.vue'
 /**
  * almost clone of https://dope.ghost.io/
  */
 export default {
-  components: {},
+  components: {
+    AboutUs,
+    Portfolio,
+    Company,
+  },
   data() {
     return {
       items: [
@@ -44,6 +56,18 @@ export default {
       scrollY: 0,
       docHeight: 0,
     }
+  },
+  head: {
+    title: 'HOME',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // {
+      //   hid: 'description',
+      //   name: 'description',
+      //   content: 'my website description'
+      // }
+    ],
   },
   computed: {
     screenHeight() {

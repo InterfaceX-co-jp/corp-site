@@ -24,6 +24,7 @@ export default Vue.extend({
   justify-content: space-between;
   width: 100%;
   padding: 5% 5%;
+  position: fixed;
 }
 
 .title {
