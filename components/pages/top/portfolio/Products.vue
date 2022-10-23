@@ -70,7 +70,7 @@ export default Vue.extend({
   },
   computed: {
     widthPerCard(): number {
-      const w = (this as any).$vuetify.breakpoint.width
+      const w = (this as any).$window.width
 
       if (w > 0 && w < 600) {
         return w
