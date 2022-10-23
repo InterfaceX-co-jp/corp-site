@@ -69,12 +69,13 @@ export default {
   },
   computed: {
     widthPerCard(): number {
-      const w = this.$window.width
+      const w = this.$vuetify.breakpoint.width
+
       if (w > 0 && w < 600) {
-        return this.$window.width
+        return w
       }
       if (w <= 661 && w < 1000) {
-        return this.$window.width / 2
+        return w / 2
       }
 
       return 500

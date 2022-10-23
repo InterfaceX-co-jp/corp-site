@@ -1,17 +1,21 @@
 <template>
-  <v-card class="title" :width="width" hover>
+  <v-card :width="width" hover>
+    <v-card-title class="card-title">
+      {{ title }}
+    </v-card-title>
     <img :height="width * 0.618" :width="width" :src="imageSrc" />
-
-    <v-card-title class="card-title">{{ title }}</v-card-title>
-
-    <v-card-text v-if="description" class="card-text">
-      {{ description }}
+    <v-card-text style="align-items: center; display: flex; gap: 8px">
+      <slot name="price-chip" />
+      <span class="price">{{ price }}</span>
     </v-card-text>
+    <slot />
   </v-card>
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue'
+
+export default Vue.extend({
   props: {
     width: {
       default: 374,
@@ -21,19 +25,16 @@ export default {
       required: true,
       type: String,
     },
+    price: {
+      required: true,
+      type: String,
+    },
     imageSrc: {
       required: true,
       type: String,
     },
-    description: {
-      required: true,
-      type: String,
-    },
   },
-  data() {
-    return {}
-  },
-}
+})
 </script>
 
 <style scoped lang="scss">
@@ -41,5 +42,11 @@ export default {
   &-text {
     text-align: left;
   }
+}
+
+.price {
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
 }
 </style>

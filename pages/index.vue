@@ -1,28 +1,31 @@
 <template>
-  <div>
+  <v-app>
     <v-carousel hide-delimiters :height="screenHeight">
       <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
         <div class="carousel-overlay">
           <div class="carousel-overlay-title">{{ item.title }}</div>
           <div class="carousel-overlay-description">
-            {{ item.desicription }}
+            {{ item.description }}
           </div>
         </div>
       </v-carousel-item>
     </v-carousel>
     <Portfolio />
-  </div>
+    <Price />
+  </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Portfolio from '~/components/pages/top/portfolio/Products.vue'
+import Price from '~/components/pages/top/price/Price.vue'
 /**
  * almost clone of https://dope.ghost.io/
  */
 export default Vue.extend({
   components: {
     Portfolio,
+    Price,
   },
   data() {
     return {
@@ -30,23 +33,23 @@ export default Vue.extend({
         {
           src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
           title: 'About',
-          desicription: `WEBサービスをフリーランスチームが成功させる`,
+          description: `WEBサービスをフリーランスチームが成功させる`,
         },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Works / Portfolio',
-          desicription: 'これまでの制作実績',
-        },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Company',
-          desicription: '私たちの組織について',
-        },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Contact',
-          desicription: 'お問い合わせはこちらから',
-        },
+        // {
+        //   src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+        //   title: 'Works / Portfolio',
+        //   description: 'これまでの制作実績',
+        // },
+        // {
+        //   src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+        //   title: 'Company',
+        //   description: '私たちの組織について',
+        // },
+        // {
+        //   src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+        //   title: 'Contact',
+        //   description: 'お問い合わせはこちらから',
+        // },
       ],
       scrollY: 0,
       docHeight: 0,
