@@ -10,24 +10,19 @@
         </div>
       </v-carousel-item>
     </v-carousel>
-    <AboutUs />
     <Portfolio />
-    <Company />
   </div>
 </template>
 
-<script>
-import AboutUs from '~/components/pages/top/AboutUs.vue'
-import Portfolio from '~/components/pages/top/Portfolio.vue'
-import Company from '~/components/pages/top/Company.vue'
+<script lang="ts">
+import Vue from 'vue'
+import Portfolio from '~/components/pages/top/portfolio/Products.vue'
 /**
  * almost clone of https://dope.ghost.io/
  */
-export default {
+export default Vue.extend({
   components: {
-    AboutUs,
     Portfolio,
-    Company,
   },
   data() {
     return {
@@ -70,11 +65,11 @@ export default {
     ],
   },
   computed: {
-    screenHeight() {
+    screenHeight(): number {
       return this.$window.height
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

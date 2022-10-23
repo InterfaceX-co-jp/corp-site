@@ -1,7 +1,5 @@
 import Vue from 'vue'
-import { Plugin } from '@nuxt/types'
-
-export interface window {
+export interface Window {
   pageYOffset: number
   width: number
   height: number
@@ -9,20 +7,11 @@ export interface window {
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $window: window
+    $window: Window
   }
 }
 
-declare module '@nuxt/types' {
-  interface NuxtAppOptions {
-    $window: window
-  }
-  interface Context {
-    $window: window
-  }
-}
-
-const $window = Vue.observable<window>({
+const $window = Vue.observable<Window>({
   width: 0,
   height: 0,
   pageYOffset: 0,
@@ -45,8 +34,4 @@ if (process.browser) {
   onResize()
 }
 
-const plugin: Plugin = (_, inject) => {
-  inject('window', $window)
-}
-
-export default plugin
+Vue.prototype.$window = $window

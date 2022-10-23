@@ -13,7 +13,7 @@ export default {}
 <style lang="scss" scoped>
 .about-us {
   height: 400px;
-  padding: 32px 0;
+  padding: 40px 0;
 
   &__inner {
     text-align: center;
