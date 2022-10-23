@@ -1,56 +1,78 @@
 <template>
-  <v-carousel hide-delimiters :height="screenHeight">
-    <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
-      <div class="carousel-overlay">
-        <div class="carousel-overlay-title">{{ item.title }}</div>
-        <div class="carousel-overlay-description">
-          {{ item.desicription }}
+  <v-app>
+    <v-carousel hide-delimiters :height="screenHeight">
+      <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
+        <div class="carousel-overlay">
+          <div class="carousel-overlay-title">{{ item.title }}</div>
+          <div class="carousel-overlay-description">
+            {{ item.description }}
+          </div>
         </div>
-      </div>
-    </v-carousel-item>
-  </v-carousel>
+      </v-carousel-item>
+    </v-carousel>
+    <Portfolio />
+    <Price />
+  </v-app>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+import Portfolio from '~/components/pages/top/portfolio/Products.vue'
+import Price from '~/components/pages/top/price/Price.vue'
 /**
  * almost clone of https://dope.ghost.io/
  */
-export default {
-  components: {},
+export default Vue.extend({
+  components: {
+    Portfolio,
+    Price,
+  },
   data() {
     return {
       items: [
         {
           src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
           title: 'About',
-          desicription: `WEBサービスをフリーランスチームが成功させる`,
+          description: `WEBサービスをフリーランスチームが成功させる`,
         },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Works / Portfolio',
-          desicription: 'これまでの制作実績',
-        },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Company',
-          desicription: '私たちの組織について',
-        },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-          title: 'Contact',
-          desicription: 'お問い合わせはこちらから',
-        },
+        // {
+        //   src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+        //   title: 'Works / Portfolio',
+        //   description: 'これまでの制作実績',
+        // },
+        // {
+        //   src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+        //   title: 'Company',
+        //   description: '私たちの組織について',
+        // },
+        // {
+        //   src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+        //   title: 'Contact',
+        //   description: 'お問い合わせはこちらから',
+        // },
       ],
       scrollY: 0,
       docHeight: 0,
     }
   },
+  head: {
+    title: 'HOME',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      // {
+      //   hid: 'description',
+      //   name: 'description',
+      //   content: 'my website description'
+      // }
+    ],
+  },
   computed: {
-    screenHeight() {
-      return this.$window.height
+    screenHeight(): number {
+      return (this as any).$window.height
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
