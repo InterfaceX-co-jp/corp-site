@@ -1,5 +1,5 @@
 <template>
-  <v-card :width="width" class="title">
+  <v-card class="title" :width="width" hover>
     <img :height="width * 0.618" :width="width" :src="imageSrc" />
 
     <v-card-title class="card-title">{{ title }}</v-card-title>

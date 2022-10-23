@@ -50,18 +50,18 @@ export default {
           description: 'web制作のディレクション・開発を行います。',
         },
         {
-          title: 'SNS - Instagram - Design',
-          imageSrc: '/portfolio/samantha-gloabl-hp.png',
-          description: '企業様アカウントのデザインを作成します。',
-        },
-        {
           title: 'SNS - Instagram - Operation',
-          imageSrc: '/portfolio/datagusto-lp.png',
+          imageSrc: '/portfolio/instagram-card.jpg',
           description: '企業様アカウントの投稿・運用を行います。',
         },
         {
+          title: 'SNS - Instagram - Contents Creation',
+          imageSrc: '/portfolio/content-card.jpg',
+          description: '企業様アカウントのコンテンツを制作します。',
+        },
+        {
           title: 'SNS - Instagram - Seminer',
-          imageSrc: '/portfolio/samantha-gloabl-hp.png',
+          imageSrc: '/portfolio/seminer-card.jpg',
           description: '企業様にSNS運用のセミナー出張を行います。',
         },
       ],
