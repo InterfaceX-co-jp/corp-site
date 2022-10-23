@@ -17,6 +17,7 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import PortfolioCard from '~/components/pages/top/portfolio/ProductCard.vue'
 
 interface IProducts {
@@ -25,7 +26,7 @@ interface IProducts {
   description: string
 }
 
-export default {
+export default Vue.extend({
   components: {
     PortfolioCard,
   },
@@ -69,7 +70,7 @@ export default {
   },
   computed: {
     widthPerCard(): number {
-      const w = this.$vuetify.breakpoint.width
+      const w = (this as any).$vuetify.breakpoint.width
 
       if (w > 0 && w < 600) {
         return w
@@ -81,7 +82,7 @@ export default {
       return 500
     },
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>

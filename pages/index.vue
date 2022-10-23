@@ -69,7 +69,7 @@ export default Vue.extend({
   },
   computed: {
     screenHeight(): number {
-      return this.$window.height
+      return (this as any).$window.height
     },
   },
 })

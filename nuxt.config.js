@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -20,7 +18,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/window.ts' }],
+  plugins: [{ src: '~/plugins/window' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -65,13 +63,13 @@ export default {
       dark: true,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+          // primary: colors.blue.darken2,
+          // accent: colors.grey.darken3,
+          // secondary: colors.amber.darken3,
+          // info: colors.teal.lighten1,
+          // warning: colors.amber.base,
+          // error: colors.deepOrange.accent4,
+          // success: colors.green.accent3,
         },
       },
     },
